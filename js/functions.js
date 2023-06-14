@@ -7,4 +7,5 @@ function comparisondLength(stringLength, maxLength) {
   return false;
 }
 
+// eslint-disable-next-line
 console.log(comparisondLength('проверяемая строка', 18));
