@@ -25,4 +25,4 @@ const checkPalindrome = function (palindrome) {
 };
 
 // eslint-disable-next-line
-console.log(checkPalindrome ('Лёша на полке клопа нашёл '));
+console.log(checkPalindrome ('Лёша на полке клопа нашёл'));
