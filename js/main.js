@@ -1,3 +1,7 @@
+import {getRandomInteger} from './util.js';
+import {getRandomArrayElement} from './util.js';
+import {createIdGenerator} from './util.js';
+
 const PHOTO = 25;
 const PHOTO_ID_COUNT = 25;
 const PHOTO_URL_COUNT = 25;
@@ -47,25 +51,6 @@ const COMENT_TEXT = [
   'Я поскользнулся на банановой кожуре и уронил фотоаппарат на кота и у меня получилась фотография лучше.',
   'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!'
 ];
-
-const getRandomInteger = (a, b) => {
-  const lower = Math.ceil(Math.min(a, b));
-  const upper = Math.floor(Math.max(a, b));
-  const result = Math.random() * (upper - lower + 1) + lower;
-  return Math.floor(result);
-};
-
-const getRandomArrayElement = (elements) => elements[getRandomInteger(0, elements.length - 1)];
-
-// Function for generating a random non-repeating comment ID:
-function createIdGenerator () {
-  let lastGeneratedId = 0;
-
-  return function () {
-    lastGeneratedId += 1;
-    return lastGeneratedId;
-  };
-}
 
 const generatePhotoId = createIdGenerator();
 const generateCommentId = createIdGenerator();
