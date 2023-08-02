@@ -1,9 +1,10 @@
+
 import {getRandomInteger} from './util.js';
 import {getRandomArrayElement} from './util.js';
 import {createIdGenerator} from './util.js';
 
 
-const PHOTO = 25;
+const PHOTO = 22;
 const PHOTO_ID_COUNT = 25;
 const PHOTO_URL_COUNT = 25;
 const AVATR_COUNT = 6;
