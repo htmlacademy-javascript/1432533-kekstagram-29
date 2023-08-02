@@ -51,12 +51,12 @@ const hideModal = () => {
 };
 
 
-const blockingСonditionOnFocus = () =>
+const blockСonditionOnFocus = () =>
   document.activeElement === hashtagField || document.activeElement === descriptionField;
 
 
 function onDocumentEscKeydown(evt) {
-  if (evt.key === 'Escape' && !blockingСonditionOnFocus()) {
+  if (evt.key === 'Escape' && !blockСonditionOnFocus()) {
     evt.preventDefault();
     hideModal();
   }
@@ -127,7 +127,7 @@ const unblockSubmitButton = () => {
   buttonSubmit.textContent = SUBMIT_BUTTON_TEXT;
 };
 
-const userFotoFormSubmit = () => {
+const submitUserPhoto = () => {
   uploadForm.addEventListener('submit', (evt) => {
     evt.preventDefault();
     if (pristine.validate()) {
@@ -148,4 +148,4 @@ const userFotoFormSubmit = () => {
 fileField.addEventListener('change', onOpenFileChange);
 cancelCross.addEventListener('click', onCancelCrossClick);
 
-export {userFotoFormSubmit, onDocumentEscKeydown};
+export {submitUserPhoto, onDocumentEscKeydown};

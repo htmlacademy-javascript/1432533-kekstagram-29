@@ -8,16 +8,16 @@ const getRandomInteger = (a, b) => {
 const getRandomArrayElement = (elements) => elements[getRandomInteger(0, elements.length - 1)];
 
 // Function for generating a random non-repeating comment ID:
-function createIdGenerator () {
+const createIdGenerator = () => {
   let lastGeneratedId = 0;
 
-  return function () {
+  return () => {
     lastGeneratedId += 1;
     return lastGeneratedId;
   };
-}
+};
 
-const debounce = (callback, timeoutDelay = 500) => {
+const debounce = (callback, timeoutDelay) => {
   //Используем замыкание, чтобы id таймаута приклеился к возвращаемой функции с setTimeout для его перезаписи
   let timeoutId;
 

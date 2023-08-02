@@ -1,4 +1,3 @@
-
 const DISPLAY_COMMENTS = 5;
 
 const bigPictureElement = document.querySelector('.big-picture');
@@ -66,7 +65,7 @@ const onCancelButtonClick = () => {
 
 const onCommentsLoaderClick = () => renderComments();
 
-const renderPicturesDetalis = ({ url, likes, description }) => {
+const renderPicturesDetails = ({ url, likes, description }) => {
   bigPictureElement.querySelector('.big-picture__img img').src = url;
   bigPictureElement.querySelector('.big-picture__img img').alt = description;
   bigPictureElement.querySelector('.likes-count').textContent = likes;
@@ -79,7 +78,7 @@ const showBigPicture = (data) => {
   commentsLoaderElement.classList.add('hidden');
   document.addEventListener('keydown', onDocumentKeydown);
 
-  renderPicturesDetalis(data);
+  renderPicturesDetails(data);
   comments = data.comments;
   if (comments.length > 0) {
     renderComments();

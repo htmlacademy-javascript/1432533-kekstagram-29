@@ -1,4 +1,4 @@
-const Effects = [
+const effects = [
   {
     NAME: 'none',
     FILTER: 'none',
@@ -43,7 +43,7 @@ const Effects = [
   }
 ];
 
-const DEFAULT_EFFECT = Effects[0];
+const DEFAULT_EFFECT = effects[0];
 let currentEffect = DEFAULT_EFFECT;
 
 const previewImage = document.querySelector('.img-upload__preview img');
@@ -68,7 +68,7 @@ const updateSlider = () => {
 
 
 const onEffectChange = (evt) => {
-  currentEffect = Effects.find((effect) => effect.NAME === evt.target.value);
+  currentEffect = effects.find((effect) => effect.NAME === evt.target.value);
   previewImage.className = `effects__preview--${currentEffect.NAME}`;
   updateSlider();
 };
