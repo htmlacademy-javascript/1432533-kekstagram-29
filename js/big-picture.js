@@ -1,7 +1,7 @@
 const DISPLAY_COMMENTS = 5;
 
 const bigPictureElement = document.querySelector('.big-picture');
-
+const commentElement = bigPictureElement.querySelector('.comments-shown');
 const commentCountElement = bigPictureElement.querySelector('.comments-count');
 const commentListElement = bigPictureElement.querySelector('.social__comments');
 const commentsLoaderElement = bigPictureElement.querySelector('.comments-loader');
@@ -41,6 +41,7 @@ const renderComments = () => {
 
   commentListElement.innerHTML = '';
   commentListElement.append(fragment);
+  commentElement.textContent = commentsShown;
   commentCountElement.textContent = comments.length;
 };
 
