@@ -1,3 +1,4 @@
+
 const DISPLAY_COMMENTS = 5;
 
 const bigPictureElement = document.querySelector('.big-picture');
