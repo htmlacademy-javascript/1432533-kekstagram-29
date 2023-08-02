@@ -78,8 +78,4 @@ const createPhoto = () => ({
 // Creating an array of photos:
 const similarPhotos = Array.from({length: PHOTO}, createPhoto);
 
-// eslint-disable-next-line
-console.log(
-  similarPhotos
-);
 export {similarPhotos};

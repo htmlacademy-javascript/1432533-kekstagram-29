@@ -17,6 +17,16 @@ function createIdGenerator () {
   };
 }
 
-export {getRandomInteger};
-export {getRandomArrayElement};
-export {createIdGenerator};
+const debounce = (callback, timeoutDelay = 500) => {
+  //Используем замыкание, чтобы id таймаута приклеился к возвращаемой функции с setTimeout для его перезаписи
+  let timeoutId;
+
+  return (...rest) => {
+    //Удаляем предыдущий таймаут, чтобы не копились
+    clearTimeout(timeoutId);
+    //Устанавливаем новый таймаут с вызовом колбэка
+    timeoutId = setTimeout(() => callback.apply(this, rest), timeoutDelay);
+  };
+};
+
+export {getRandomInteger, getRandomArrayElement, createIdGenerator, debounce};

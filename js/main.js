@@ -1,5 +1,14 @@
-import { similarPhotos } from './data.js';
+import { getData, showAlert } from './create-api.js';
 import { renderGallery } from './gallery.js';
-import './formupload.js';
+import { userFotoFormSubmit } from './formupload.js';
 
-renderGallery(similarPhotos);
+
+getData()
+  .then((usersFoto) => {
+    renderGallery(usersFoto);
+  })
+  .catch((err) => {
+    showAlert(err.message);
+  });
+
+userFotoFormSubmit();
