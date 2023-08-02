@@ -2,6 +2,8 @@ const thumbnailTemplate = document
   .querySelector('#picture')
   .content.querySelector('.picture');
 
+const filterContainer = document.querySelector('.img-filters');
+
 const createThumbnail = ({ comments, description, likes, url, id }) => {
   const thumbnail = thumbnailTemplate.cloneNode(true);
 
@@ -22,6 +24,7 @@ const renderThumbnail = (pictures, container) => {
   });
 
   container.append(fragment);
+  filterContainer.classList.remove('img-filters--inactive');
 };
 
 export { renderThumbnail };
