@@ -1,5 +1,5 @@
 import { similarPhotos } from './data.js';
-import { renderThumbnail } from './thimbnail.js';
+import { renderGallery } from './gallery.js';
 
 
-renderThumbnail(similarPhotos);
+renderGallery(similarPhotos);
