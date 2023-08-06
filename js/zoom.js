@@ -16,20 +16,16 @@ const scaleImage = (value) => {
 
 
 const onSmallerButtonClick = () => {
-  const currentValue = parseInt(scaleValue.value, 10);
-  const newValue = currentValue - SCALE_STEP;
-  if (newValue >= MIN_SCALE) {
-    scaleImage(newValue);
-  }
+  scaleImage(
+    Math.max(parseInt(scaleValue.value, 10) - SCALE_STEP, MIN_SCALE)
+  );
 };
 
 
 const onBiggerButtonClick = () => {
-  const currentValue = parseInt(scaleValue.value, 10);
-  const newValue = currentValue + SCALE_STEP;
-  if (newValue <= MAX_SCALE) {
-    scaleImage(newValue);
-  }
+  scaleImage(
+    Math.min(parseInt(scaleValue.value, 10) + SCALE_STEP, MAX_SCALE)
+  );
 };
 
 
