@@ -1,11 +1,10 @@
-const thumbnailTemplate = document
+const thumbnailTemplateElement = document
   .querySelector('#picture')
   .content.querySelector('.picture');
 
-const filterContainer = document.querySelector('.img-filters');
 
 const createThumbnail = ({ comments, description, likes, url, id }) => {
-  const thumbnail = thumbnailTemplate.cloneNode(true);
+  const thumbnail = thumbnailTemplateElement.cloneNode(true);
 
   thumbnail.querySelector('.picture__img').src = url;
   thumbnail.querySelector('.picture__img').alt = description;
@@ -17,6 +16,7 @@ const createThumbnail = ({ comments, description, likes, url, id }) => {
 };
 
 const renderThumbnail = (pictures, container) => {
+  container.querySelectorAll('.picture').forEach((element) => element.remove());
   const fragment = document.createDocumentFragment();
   pictures.forEach((picture) => {
     const thumbnail = createThumbnail(picture);
@@ -24,7 +24,6 @@ const renderThumbnail = (pictures, container) => {
   });
 
   container.append(fragment);
-  filterContainer.classList.remove('img-filters--inactive');
 };
 
 export { renderThumbnail };
